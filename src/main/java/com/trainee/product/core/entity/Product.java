@@ -24,10 +24,13 @@ public class Product {
     @Column(name = "quantity")
     private Float quantity;
 
-    @Column(name = "buyValue")
+    @Column(name = "buy_value")
     private Float buyValue;
 
-    @Column(name = "sellValue")
+    @Column(name= "tax_value")
+    private Float taxValue;
+
+    @Column(name = "sell_value")
     private Float sellValue;
 
     @ManyToOne
