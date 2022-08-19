@@ -3,6 +3,7 @@ package com.trainee.product.infra.controller;
 import com.trainee.product.core.service.cellar.CellarCrudService;
 import com.trainee.product.core.service.cellar.request.CellarRequest;
 import com.trainee.product.core.service.cellar.respoonse.CellarResponse;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
