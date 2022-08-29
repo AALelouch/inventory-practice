@@ -8,10 +8,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/product/cellar")
+@RequestMapping("/api/cellar")
+@CrossOrigin(origins = "*")
 public class CellarControllerImpl {
     private CellarCrudService cellarCrudService;
 
@@ -26,13 +28,13 @@ public class CellarControllerImpl {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    private void createCellar(@RequestBody CellarRequest cellarRequest){
+    private void createCellar(@RequestBody @Valid CellarRequest cellarRequest){
         cellarCrudService.create(cellarRequest);
     }
 
     @PutMapping("/update/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    private void updateCellar(@PathVariable Long id, @RequestBody CellarRequest cellarRequest){
+    private void updateCellar(@PathVariable Long id, @RequestBody @Valid CellarRequest cellarRequest){
         cellarCrudService.update(id, cellarRequest);
     }
 

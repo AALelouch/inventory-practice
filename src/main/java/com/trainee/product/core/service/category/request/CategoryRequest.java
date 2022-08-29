@@ -1,6 +1,5 @@
 package com.trainee.product.core.service.category.request;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,6 +13,6 @@ public class CategoryRequest {
         this.name = name;
     }
 
-    @NotBlank(message = "Name can't be empty or null")
+    @NotBlank(message = "Name field can't be empty or null")
     private String name;
 }

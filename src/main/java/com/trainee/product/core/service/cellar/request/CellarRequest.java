@@ -11,8 +11,8 @@ import javax.validation.constraints.NotBlank;
 @NoArgsConstructor
 public class CellarRequest {
 
-    @NotBlank(message = "this field can't be null or empty")
+    @NotBlank(message = "name field can't be null or empty")
     private String name;
-    @NotBlank(message = "this field can't be null or empty")
+    @NotBlank(message = "address field can't be null or empty")
     private String address;
 }

@@ -8,11 +8,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/product/category")
+@RequestMapping("api/category")
 @AllArgsConstructor
+@CrossOrigin(origins = "*")
 public class CategoryControllerImpl {
 
     private CategoryCrudService categoryCrudServiceImpl;
@@ -20,7 +22,7 @@ public class CategoryControllerImpl {
 
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
-    public void createCategory(@RequestBody CategoryRequest categoryRequest){
+    public void createCategory(@RequestBody @Valid CategoryRequest categoryRequest){
         categoryCrudServiceImpl.create(categoryRequest);
     }
 
@@ -31,7 +33,7 @@ public class CategoryControllerImpl {
 
     @PutMapping("/update/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateCategory(@PathVariable Long id, @RequestBody CategoryRequest categoryRequest){
+    public void updateCategory(@PathVariable Long id, @RequestBody @Valid CategoryRequest categoryRequest){
         categoryCrudServiceImpl.update(categoryRequest, id);
     }
 

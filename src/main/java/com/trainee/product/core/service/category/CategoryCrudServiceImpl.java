@@ -6,8 +6,6 @@ import com.trainee.product.core.mapper.CategoryMapper;
 import com.trainee.product.core.repository.CategoryRepository;
 import com.trainee.product.core.service.category.request.CategoryRequest;
 import com.trainee.product.core.service.category.response.CategoryResponse;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
